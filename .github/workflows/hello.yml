@@ -5,5 +5,5 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Rückmeldung
+    - name: Rückmeldung
       run: echo "Hallo, ich bin ein Job."
