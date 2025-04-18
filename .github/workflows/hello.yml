@@ -1,9 +1,15 @@
 name: Hello World Workflow
 on:
+  pull_request: {types: [opened], branches: [main] }
   workflow_dispatch:
+
+run-name: PR by @${{ github.actor }}
+
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
     - name: Rückmeldung
       run: echo "Hallo, ich bin ein Job."
+    - name: Print event info
+      run: echo "Workflow triggered by ${{ github.event_name }} for PR title ${{ github.event.pull_request.title }}"
