@@ -4,7 +4,7 @@ Stellt sicher, dass simulate_flips erwartungsgemäß funktioniert.
 """
 
 import math
-from main import simulate_flips
+from workflow1.main import simulate_flips
 
 
 def test_total_counts():
