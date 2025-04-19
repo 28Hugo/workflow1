@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+Kleines Coin‑Flip‑Simulations‑Skript 🪙
+Verwendet NumPy, um eine bestimmte Anzahl von Münzwürfen zu simulieren.
+"""
+
 import argparse
 import numpy as np
 
