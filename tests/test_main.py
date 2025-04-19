@@ -3,8 +3,12 @@ Pytest‑Suite für main.py
 Stellt sicher, dass simulate_flips erwartungsgemäß funktioniert.
 """
 
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 import math
-from workflow1.main import simulate_flips
+from main import simulate_flips
 
 
 def test_total_counts():
