@@ -13,3 +13,6 @@ jobs:
       run: echo "Hallo, ich bin ein Job."
     - name: Print event info
       run: echo "Workflow triggered by ${{ github.event_name }} for PR title ${{ github.event.pull_request.title }}"
+    - name: Check for WIP
+      if: contains(github.event.pull_request.title, 'WIP')
+      run: echo "This is a Work in Progress Pull Request."
