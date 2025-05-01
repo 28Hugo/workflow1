@@ -25,6 +25,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -36,4 +43,3 @@ jobs:
 
       - name: Run tests
         run: pytest
-    
