@@ -36,6 +36,9 @@ jobs:
 
   test:
     needs: build
+    strategy:
+      matrix:
+        python-version: [3.9, 3.11]
     runs-on: ubuntu-latest
     steps:
 
