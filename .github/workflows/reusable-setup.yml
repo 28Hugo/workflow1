@@ -3,7 +3,6 @@ name: reusable-setup
 on:
   workflow_call:
     inputs:
-
       python-version: #Input-ID
         description: "Version of Python"
         required: true

@@ -18,12 +18,12 @@ jobs:
 
     steps:
           
-      - name: checkout
-        uses: actions/checkout@v4
+     # - name: checkout
+      #  uses: actions/checkout@v4
 
 
       - name: use reusable setup
-        uses: ./.github\workflows/reusable-setup.yml
+        uses: ./.github/workflows/reusable-setup.yml
         with: 
           python-version: ${{ matrix.python-version }}    
 
