@@ -1,0 +1,25 @@
+name: reusable-setup
+
+on:
+  workflow_call:
+    inputs:
+      python-version: #Input-ID
+        description: "Version of Python"
+        required: true
+        type: string
+
+
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    
+        - name: checkout
+          uses: actions/checkout@v4
+
+        - name: setup language
+          uses: actions/setup-python@v4
+          with:
+            python-version: ${{ inputs.python-version }}
+            cache: pip
