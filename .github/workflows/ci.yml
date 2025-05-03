@@ -23,7 +23,7 @@ jobs:
 
 
       - name: use reusable setup
-        uses: ./.github/workflows/reusable-setup.yml@feature
+        uses: ./.github/workflows/reusable-setup.yml
         with: 
           python-version: ${{ matrix.python-version }}    
 
