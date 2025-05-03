@@ -18,17 +18,20 @@ jobs:
 
     steps:
           
-     # - name: checkout
-      #  uses: actions/checkout@v4
+     
+      - name: checkout
+        uses: actions/checkout@v4
 
+      - name: Check File Readability # <-- Neuer Schritt
+        run: cat ./.github/workflows/reusable-setup.yml
 
       - name: use reusable setup
-        uses: ./.github/workflows/reusable-setup.yml
+        uses: ./.github/workflows/action.yml
         with: 
           python-version: ${{ matrix.python-version }}    
 
   test:
-        needs: build
+        # needs: build
         runs-on: ubuntu-latest
         strategy:
           matrix:
@@ -36,11 +39,11 @@ jobs:
 
         steps:
 
-        #  - name: checkout
-        #    uses: actions/checkout@v4
+          - name: checkout
+            uses: actions/checkout@v4
 
           - name: use reusable setup
-            uses: ./.github/workflows/reusable-setup.yml
+            uses: ./.github/workflows/action.yml
             with: 
               python-version: ${{ matrix.python-version }}
 
