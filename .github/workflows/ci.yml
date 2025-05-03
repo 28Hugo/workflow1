@@ -22,6 +22,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - name: List files # <-- Debugging Schritt hinzufügen
+        run: |
+          echo "Working Directory: $(pwd)"
+          ls -la
+          echo ".github/workflows contents:"
+          ls -la .github/workflows
 
       - name: use reusable setup
         uses: ./.github/workflows/reusable-setup.yml
